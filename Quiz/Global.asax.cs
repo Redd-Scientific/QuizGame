@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Quiz.Migrations;
+using Quiz.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -25,7 +28,12 @@ namespace Quiz
             AuthConfig.RegisterAuth();
 
             System.Data.Entity.Database.SetInitializer(
-                new Quiz.Models.QuizContextInitializer());
+                new MigrateDatabaseToLatestVersion<QuizContext, Configuration>());
         }
+
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, Configuration>());
+        }*/
     }
 }
