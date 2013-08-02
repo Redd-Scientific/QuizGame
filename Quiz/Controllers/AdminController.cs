@@ -12,17 +12,17 @@ using Quiz.Models;
 
 namespace Quiz.Controllers
 {
-    public class AdminController : ApiController
+    public class QuestionAdminController : ApiController
     {
         private QuizContext db = new QuizContext();
 
-        // GET api/Admin
+        // GET api/QuestionAdmin
         public IEnumerable<Question> GetQuestions()
         {
             return db.Questions.AsEnumerable();
         }
 
-        // GET api/Admin/5
+        // GET api/QuestionAdmin/5
         public Question GetQuestion(int id)
         {
             Question question = db.Questions.Find(id);
@@ -34,7 +34,7 @@ namespace Quiz.Controllers
             return question;
         }
 
-        // PUT api/Admin/5
+        // PUT api/QuestionAdmin/5
         public HttpResponseMessage PutQuestion(int id, Question question)
         {
             if (!ModelState.IsValid)
@@ -61,7 +61,7 @@ namespace Quiz.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // POST api/Admin
+        // POST api/QuestionAdmin
         public HttpResponseMessage PostQuestion(Question question)
         {
             if (ModelState.IsValid)
@@ -79,7 +79,7 @@ namespace Quiz.Controllers
             }
         }
 
-        // DELETE api/Admin/5
+        // DELETE api/QuestionAdmin/5
         public HttpResponseMessage DeleteQuestion(int id)
         {
             Question question = db.Questions.Find(id);

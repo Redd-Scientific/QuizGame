@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Quiz.Migrations;
+using System.Data.Entity;
 
 namespace Quiz.Models
 {
@@ -15,7 +16,14 @@ namespace Quiz.Models
 
         public QuizContext() : base("name=CategoryContext")
         {
+
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, Configuration>());
+        }
+
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<Category> Categories { get; set; }
