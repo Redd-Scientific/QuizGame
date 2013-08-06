@@ -1,6 +1,8 @@
 namespace Quiz.Migrations
 {
+    using Quiz.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -13,20 +15,29 @@ namespace Quiz.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        /*protected override void Seed(Quiz.Models.QuizContext context)
+        protected override void Seed(Quiz.Models.QuizContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var category = new List<Category>()            
+            {
+                new Category() { Name = "Harry Potter" },
+                new Category() { Name = "Lord of the Rings" },
+                new Category() { Name = "Game of Thrones" }
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-        }*/
+            category.ForEach(c => context.Categories.Add(c));
+            context.SaveChanges();
+
+            var question = new List<Question>() { 
+            
+                new Question() {QuestionText="What is Harry's house?", AnswerA="Gryffindor", AnswerB="Ravenclaw", AnswerC="Slytherin", AnswerD="Hufflepuff", 
+                    Correct=1, categoryId=category[0].CategoryId, Category=category[0] },
+                new Question() {QuestionText="What is Hermione's last name?", AnswerA="Perkins", AnswerB="Dickens", AnswerC="Granger", AnswerD="Dursley", 
+                    Correct=3, categoryId=category[0].CategoryId, Category=category[0] },
+                new Question() {QuestionText="Where should Frodo take the ring?", AnswerA="Mordor", AnswerB="Rivendell", AnswerC="Mount Doom", AnswerD="Shire", 
+                    Correct=3, categoryId=category[1].CategoryId, Category=category[1] },
+            };
+            question.ForEach(q => context.Questions.Add(q));
+            context.SaveChanges();
+        }
     }
 }
