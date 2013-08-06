@@ -13,7 +13,7 @@ namespace Quiz.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Quiz.Models.QuizContext context)
+        /*protected override void Seed(Quiz.Models.QuizContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -27,6 +27,6 @@ namespace Quiz.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-        }
+        }*/
     }
 }
