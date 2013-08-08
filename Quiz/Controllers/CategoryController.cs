@@ -9,7 +9,7 @@ using Quiz.Models;
 
 namespace Quiz.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class CategoryController : Controller
     {
         private QuizContext db = new QuizContext();
