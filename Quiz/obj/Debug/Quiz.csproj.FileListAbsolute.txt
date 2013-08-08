@@ -80,6 +80,5 @@ C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\bin\ko\System.Spat
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\bin\ru\System.Spatial.resources.dll
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.csprojResolveAssemblyReference.cache
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.dll
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.pdb
