@@ -15,9 +15,9 @@ namespace Quiz.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Quiz.Models.QuizContext context)
+        /*protected override void Seed(Quiz.Models.QuizContext context)
         {
-         /*   var category = new List<Category>()            
+            var category = new List<Category>()            
             {
                 new Category() { Name = "Harry Potter" },
                 new Category() { Name = "Lord of the Rings" },
@@ -37,7 +37,7 @@ namespace Quiz.Migrations
                     Correct=3, categoryId=category[1].CategoryId, Category=category[1] },
             };
             question.ForEach(q => context.Questions.AddOrUpdate(q));
-            context.SaveChanges();*/
-        }
+            context.SaveChanges();
+        }*/
     }
 }
