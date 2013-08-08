@@ -1,10 +1,10 @@
 ﻿@model Quiz.Models.Category
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Category";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
