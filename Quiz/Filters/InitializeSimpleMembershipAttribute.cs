@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using Quiz.Models;
+using System.Web.Security;
 
 namespace Quiz.Filters
 {
@@ -39,6 +40,21 @@ namespace Quiz.Filters
                     }
 
                     WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    
+                    /** Administrator role **/
+                    const string adminRole = "Administrator";
+                    const string adminName = "Administrator";
+
+                    if (!Roles.RoleExists(adminRole))
+                    {
+                        Roles.CreateRole(adminRole);
+                    }
+                    if (!WebSecurity.UserExists(adminName))
+                    {
+                        WebSecurity.CreateUserAndAccount(adminName, "password");
+                        Roles.AddUserToRole(adminName, adminRole);
+                    } 
+           
                 }
                 catch (Exception ex)
                 {

@@ -22,6 +22,16 @@ namespace Quiz.Controllers
             return db.Questions.AsEnumerable();
         }
 
+        // GET api/QuestionAdmin?category=f
+        public IEnumerable<Question> GetQuestions(int category)
+        {
+            var query = from q in db.Questions
+                        where q.Category.CategoryId == category
+                        select q;
+
+            return query.ToList();
+        }
+
         // GET api/QuestionAdmin/5
         public Question GetQuestion(int id)
         {

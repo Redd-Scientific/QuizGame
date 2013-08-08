@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Quiz.Models
 {
@@ -22,8 +23,11 @@ namespace Quiz.Models
         public string AnswerD { get; set; }
         [Required]
         public int Correct { get; set; }
-
-        public int categoryId;
+        
+        [ForeignKey("Category")]
+        [Display(Name = "Category")]
+        [Required]
+        public int CategoryId;
 
         //Navigation property
         public virtual Category Category { get; set; }

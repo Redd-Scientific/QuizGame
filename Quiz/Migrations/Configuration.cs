@@ -7,9 +7,9 @@ namespace Quiz.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Quiz.Models.QuizContext>
+    internal sealed class QuizConfiguration : DbMigrationsConfiguration<Quiz.Models.QuizContext>
     {
-        public Configuration()
+        public QuizConfiguration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
@@ -17,14 +17,14 @@ namespace Quiz.Migrations
 
         protected override void Seed(Quiz.Models.QuizContext context)
         {
-            var category = new List<Category>()            
+         /*   var category = new List<Category>()            
             {
                 new Category() { Name = "Harry Potter" },
                 new Category() { Name = "Lord of the Rings" },
                 new Category() { Name = "Game of Thrones" }
             };
 
-            category.ForEach(c => context.Categories.Add(c));
+            category.ForEach(c => context.Categories.AddOrUpdate(c));
             context.SaveChanges();
 
             var question = new List<Question>() { 
@@ -36,8 +36,8 @@ namespace Quiz.Migrations
                 new Question() {QuestionText="Where should Frodo take the ring?", AnswerA="Mordor", AnswerB="Rivendell", AnswerC="Mount Doom", AnswerD="Shire", 
                     Correct=3, categoryId=category[1].CategoryId, Category=category[1] },
             };
-            question.ForEach(q => context.Questions.Add(q));
-            context.SaveChanges();
+            question.ForEach(q => context.Questions.AddOrUpdate(q));
+            context.SaveChanges();*/
         }
     }
 }

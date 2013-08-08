@@ -14,8 +14,6 @@ namespace Quiz.Models
         [Required]
         public string Name { get; set; }
 
-        //Navigation properties
-        [JsonIgnore]
         public virtual ICollection<Question> Question { get; set; }
     }
 }

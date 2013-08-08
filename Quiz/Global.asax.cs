@@ -28,12 +28,12 @@ namespace Quiz
             AuthConfig.RegisterAuth();
 
             System.Data.Entity.Database.SetInitializer(
-                new MigrateDatabaseToLatestVersion<QuizContext, Configuration>());
+                new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
         }
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
         }*/
     }
 }
