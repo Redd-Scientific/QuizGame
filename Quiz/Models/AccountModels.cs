@@ -11,7 +11,7 @@ namespace Quiz.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("name=CategoryContext")
         {
         }
 

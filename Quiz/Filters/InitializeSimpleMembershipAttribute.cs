@@ -39,7 +39,8 @@ namespace Quiz.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    //TODO: verify how to specify context for migration
+                    WebSecurity.InitializeDatabaseConnection("CategoryContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                     
                     /** Administrator role **/
                     const string adminRole = "Administrator";
