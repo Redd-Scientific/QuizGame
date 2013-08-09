@@ -46,7 +46,7 @@ namespace Quiz.Models
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
         }*/
 
-
+        public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Category> Categories { get; set; }
     }

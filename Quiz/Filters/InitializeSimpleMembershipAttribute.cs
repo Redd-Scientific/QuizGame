@@ -30,7 +30,7 @@ namespace Quiz.Filters
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new QuizContext())
                     {
                         if (!context.Database.Exists())
                         {
