@@ -26,7 +26,7 @@ namespace Quiz.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<QuizContext>(null);
 
                 try
                 {
@@ -39,8 +39,7 @@ namespace Quiz.Filters
                         }
                     }
 
-                    //TODO: verify how to specify context for migration
-                    WebSecurity.InitializeDatabaseConnection("CategoryContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+
                     
                     /** Administrator role **/
                     const string adminRole = "Administrator";

@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebMatrix.WebData;
 
 namespace Quiz
 {
@@ -29,6 +30,9 @@ namespace Quiz
 
             System.Data.Entity.Database.SetInitializer(
                 new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
+
+            //TODO: verify how to specify context for migration
+            WebSecurity.InitializeDatabaseConnection("CategoryContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
         }
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
