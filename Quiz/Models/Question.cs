@@ -22,6 +22,7 @@ namespace Quiz.Models
         [Required]
         public string AnswerD { get; set; }
         [Required]
+        [Range(1, 4)]
         public int Correct { get; set; }
         
         [ForeignKey("Category")]
