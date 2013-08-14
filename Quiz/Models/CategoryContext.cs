@@ -54,7 +54,7 @@ namespace Quiz.Models
         //Game properties
         public DbSet<UserCategories> UserCategories { get; set; }
         public DbSet<UserQuestions> UserQuestions { get; set; }
-        public DbSet<Bet> Bets { get; set; }
-        public DbSet<BetChip> BetChips { get; set; }
+        //public DbSet<Bet> Bets { get; set; }
+        //public DbSet<BetChip> BetChips { get; set; }
     }
 }

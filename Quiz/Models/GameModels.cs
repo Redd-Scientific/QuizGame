@@ -22,42 +22,6 @@ namespace Quiz.Models
         public Category Category;
     }
 
-    public class BetChip
-    {
-        [Key]
-        public int BetChipId { get; set; }
-        public string Name { get; set; }
-        public int Value { get; set; }
-        public int Quantity { get; set; }
-
-        public BetChip(string N, int V, int Q)
-        {
-            Name = N;
-            Value = V;
-            Quantity = Q;
-        }
-    }
-
-    public class Bet
-    {
-        [Key]
-        public int BetId { get; set; }
-        public ICollection<BetChip> chips { get; set; }
-        public int totalBet
-        {
-            get { return totalBet; }
-            set 
-            {
-                int totalValue = 0;
-                foreach (BetChip b in chips)
-                {
-                    totalValue += b.Value * b.Quantity;
-                }
-                value = totalValue;
-            }
-
-        }
-    }
 
     public class UserQuestions
     {
@@ -69,15 +33,13 @@ namespace Quiz.Models
         [Key, Column(Order = 1)]
         [ForeignKey("question")]
         public int QuestionId { get; set; }
-        [ForeignKey("betAmount")]
-        public int BetId;
+        [Range (1,4)]
         public int answered { get; set; }
         public bool correct { get; set; }
-
+        public int betAmount { get; set; }
         //navigation properties
         public UserProfile user { get; set; }
         public Question question { get; set; }
-        public Bet betAmount { get; set; }
     }
 
     public class UserCategories
