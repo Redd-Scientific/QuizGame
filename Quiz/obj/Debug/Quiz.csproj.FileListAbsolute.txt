@@ -83,3 +83,5 @@ C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\bin\zh-Hant\System
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.dll
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.pdb
 C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.csprojResolveAssemblyReference.cache
+C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.Migrations.Inheritance.resources
+C:\Users\Madhu\Desktop\Idea Foundry\Redd Scientific\Quiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.Cache
