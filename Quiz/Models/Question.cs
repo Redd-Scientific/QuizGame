@@ -32,5 +32,6 @@ namespace Quiz.Models
 
         //Navigation property
         public virtual Category Category { get; set; }
+        public virtual ICollection<UserQuestions> Users { get; set; }
     }
 }

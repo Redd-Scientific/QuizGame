@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,7 @@ namespace Quiz.Models
 {
     public class QuestionDTO
     {
+        [Key]
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }
         public string AnswerA { get; set; }
@@ -22,6 +24,8 @@ namespace Quiz.Models
 
     public class BetChip
     {
+        [Key]
+        public int BetChipId { get; set; }
         public string Name { get; set; }
         public int Value { get; set; }
         public int Quantity { get; set; }
@@ -36,56 +40,61 @@ namespace Quiz.Models
 
     public class Bet
     {
-        public List<BetChip> chips { get; set; }
-        public int getTotalBet()
+        [Key]
+        public int BetId { get; set; }
+        public virtual List<BetChip> chips { get; set; }
+        public int totalBet
         {
-            chips.Add(new BetChip("25", 25, 2));
-            int totalValue = 0; 
-            foreach (BetChip b in chips)
+            get { return totalBet; }
+            set 
             {
-                totalValue += b.Value * b.Quantity;
+                int totalValue = 0;
+                foreach (BetChip b in chips)
+                {
+                    totalValue += b.Value * b.Quantity;
+                }
+                value = totalValue;
             }
-            return totalValue;
+
         }
     }
 
     public class UserQuestions
     {
-        public Bet betAmount { get; set; }
+       // [Key]
+        //public int UserQuestionId { get; set; }
+        [Key, Column(Order = 0)]
+        [ForeignKey("user")]
+        public int UserId { get; set; }
+        [Key, Column(Order = 1)]
+        [ForeignKey("question")]
+        public int QuestionId { get; set; }
+        [ForeignKey("betAmount")]
+        public int BetId;
         public int answered { get; set; }
         public bool correct { get; set; }
 
-        public int UserId;
-        public int QuestionId;
-
         //navigation properties
-        public UserProfile user;
-        public Question question;
+        public UserProfile user { get; set; }
+        public virtual Question question { get; set; }
+        public virtual Bet betAmount { get; set; }
     }
 
     public class UserCategories
     {
         public int totalQuestionsAnswered { get; set; }
-
-        public int UserId;
-        public int CategoryId;
-
-        //navigation properties
-        public UserProfile user;
-        public Category question;
-    }
-
-    public class UserGame
-    {
-        public Bet AmountLeft { get; set; }
-
-        public int UserId;
+        //[Key]
+        //public int UserCategoryId { get; set; }
+        [Key, Column(Order = 0)]
+        //[ForeignKey("UserProfile")]
+        public int UserId { get; set; }
+        [Key, Column(Order = 1)]
+        //[ForeignKey("Category")]
+        public int CategoryId { get; set; }
 
         //navigation properties
-        public UserProfile user;
+        public virtual UserProfile user {get; set;}
+        public virtual Category question { get; set; }
     }
-
-
-
 
 }

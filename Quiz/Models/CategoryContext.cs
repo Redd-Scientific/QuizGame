@@ -52,8 +52,9 @@ namespace Quiz.Models
         public DbSet<Category> Categories { get; set; }
 
         //Game properties
-        //public DbSet<UserGame> UserGame { get; set; }
-        //public DbSet<UserCategories> UserCategories { get; set; }
-        //public DbSet<UserQuestions> UserQuestions { get; set; }
+        public DbSet<UserCategories> UserCategories { get; set; }
+        public DbSet<UserQuestions> UserQuestions { get; set; }
+        public DbSet<Bet> Bets { get; set; }
+        public DbSet<BetChip> BetChips { get; set; }
     }
 }

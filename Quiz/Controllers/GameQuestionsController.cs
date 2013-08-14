@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using System.Web.Security;
 
 namespace Quiz.Controllers
 {
+    [Authorize]
     public class GameQuestionsController : ApiController
     {
         QuizContext db = new QuizContext();
@@ -24,9 +27,53 @@ namespace Quiz.Controllers
                    };
         }
 
-        public IEnumerable<QuestionDTO> GetQuestion()
+        /*public IEnumerable<QuestionDTO> GetQuestion()
         {
             return MapProducts().AsEnumerable();
+        }*/
+
+        public QuestionDTO GetQuestion()
+        {
+            MembershipUser user = Membership.GetUser(User.Identity.Name);
+            var guid = user.ProviderUserKey;
+
+            //var catQuery = from c in db.UserCategories
+            //               where c.UserId == (int)guid
+            //               select c;
+            //if (catQuery.ToList() == null)
+            //{
+            //    return (from q in MapProducts()
+            //            select q).FirstOrDefault();
+            //}
+            //else
+            //{
+            //    var query = from c in db.Categories
+            //                where !(catQuery).Any(cat => cat.CategoryId == c.CategoryId)
+            //                select c;
+            //    var question = from q in db.UserQuestions
+            //                   where (query).Any(cat => cat == q.Category) && 
+            //}
+
+           
+
+            var get_all_questions_answered_query = from q in db.UserQuestions
+                                          where q.UserId == (int)guid
+                                          select q;
+
+            var get_next_question_not_answered = from q in db.Questions
+                                                 where !(get_all_questions_answered_query).Any(quest => quest.QuestionId == q.QuestionId)
+                                                 select new QuestionDTO()
+                                                 {
+                                                     QuestionId = q.QuestionId,
+                                                     QuestionText = q.QuestionText,
+                                                     AnswerA = q.AnswerA,
+                                                     AnswerB = q.AnswerB,
+                                                     AnswerC = q.AnswerC,
+                                                     AnswerD = q.AnswerD,
+                                                     CategoryId = q.Category.CategoryId,
+                                                     Category = q.Category
+                                                 };
+            return get_next_question_not_answered.FirstOrDefault();
         }
 
         public QuestionDTO GetQuestion(int id)

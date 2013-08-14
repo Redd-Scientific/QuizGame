@@ -16,5 +16,6 @@ namespace Quiz.Models
 
         [JsonIgnore]
         public virtual ICollection<Question> Question { get; set; }
+        public virtual ICollection<UserCategories> Users { get; set; }
     }
 }

@@ -25,6 +25,10 @@ namespace Quiz.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+
+        public virtual ICollection<UserQuestions> Questions { get; set; }
+        public virtual ICollection<UserCategories> Categories { get; set; }
+        public virtual Bet BetAmt { get; set; }
     }
 
     public class RegisterExternalLoginModel
