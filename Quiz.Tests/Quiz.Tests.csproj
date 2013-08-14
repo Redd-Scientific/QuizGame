@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
+    <Content Include="Scripts\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\knockout-2.3.0.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

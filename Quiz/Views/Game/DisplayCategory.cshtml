@@ -1,0 +1,11 @@
+﻿@model Quiz.Models.QuestionDTO
+@{
+    ViewBag.Title = "Place bet for following category";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@Html.DisplayFor(model => model.Category.Name)</h3>
+<p>Place Bet:</p>
+<input type="text" data-bind="value: betAmount" />
+<input type="button"  value="Add" data-bind="click: addCustomer" />

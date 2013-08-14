@@ -1,0 +1,119 @@
+#background {
+    text-align: center;
+    width: 100%; 
+    height: 100%; 
+    position: fixed;
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+}
+
+
+.stretch {
+    margin: auto;
+    height:100%;
+	width:100%;
+}
+.chipstretch{
+margin: auto;
+height:100%;
+width:40%;
+}
+
+.amt
+{
+	font-size: 1.875em; /* 30 / 16 = 1.875 */
+	/*margin-bottom: 0.8em;*/
+}
+
+.chips
+{
+	/*border:2px solid red;*/
+	border-radius:25px;
+	width: 20%;
+	height: 100px;
+	margin-left:20px;
+	margin-top:0px;
+	float:left;
+	/*box-shadow: 10px 10px 5px #888888;*/
+}
+
+.vals
+{
+	width: 20%;
+	height: 50px;
+	margin-left:20px;
+	margin-top:0px;
+	float:left;
+}
+
+.chip
+{
+	margin-left:0px;
+}
+
+.first
+{
+	margin-left:100px;
+}
+
+.betAmtObjects
+{
+	width: 40%;
+	/*height: 10px;*/
+	margin-left:20px;
+	margin-top:10px;
+	float:left;
+}
+
+.betAmtDiv
+{
+	width: 100%;
+	/*height: 10px;*/
+	margin-left:20px;
+	margin-top:15px;
+	margin-bottom:10px;
+	float:left;
+}
+
+.chipsDiv
+{
+	width: 100%;
+	/*height: 10px;*/
+	margin-left:20px;
+	margin-top:10px;
+	position: relative;
+	float:center;
+}
+
+.valDiv
+{
+	text-align: right;
+	width:40%;
+	padding:5px 5px 5px 5px; 
+	float:left;
+	padding:10px;
+}
+.reduceBtnDiv
+{
+	text-align: left;
+	width:40%;
+	padding:5px 5px 5px 5px; 
+	float:left;
+	margin-top: 30px;
+}
+
+#betAmt
+{
+	width: 40%;
+	text-align: right;
+	float:left;
+}
+
+#goBtn
+{
+	text-align: left;
+	margin-left:10px;
+	width: 40%;
+	float:left;
+}

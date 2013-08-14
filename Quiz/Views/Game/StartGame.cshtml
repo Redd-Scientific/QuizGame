@@ -1,0 +1,44 @@
+﻿<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/start.css">
+       <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script>-->
+    </head>
+    <body>
+	
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+		<!--<div id="background">
+			<img src="images/Art Assets/Casino Table.png" class="stretch" alt="" />
+		</div>-->
+        <div id="question">
+			<h2>
+				Welcome!
+			</h2>
+		</div>
+		<div class="instructions">
+			<ul>
+				<li>You start with $100 worth of chips</li>
+				<li>Based on your confidence in the subject, place your bet</li>
+				<li>All bets are double or nothing</li>
+				<li>If you answer the question in the category correctly, you will receive twice your bet. Otherwise you will receive nothing.</li>
+			</ul>
+		</div>
+		<div class="buttons">
+			@Html.ActionLink("Start Game", "DisplayCategory", "Game")
+		</div>
+        <!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
+        <!--<script src="js/plugins.js"></script>-->
+        <!--<script src="js/main.js"></script>-->
+
+    </body>
+</html>
