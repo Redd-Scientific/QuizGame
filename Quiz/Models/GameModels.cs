@@ -42,7 +42,7 @@ namespace Quiz.Models
     {
         [Key]
         public int BetId { get; set; }
-        public virtual List<BetChip> chips { get; set; }
+        public ICollection<BetChip> chips { get; set; }
         public int totalBet
         {
             get { return totalBet; }
@@ -76,8 +76,8 @@ namespace Quiz.Models
 
         //navigation properties
         public UserProfile user { get; set; }
-        public virtual Question question { get; set; }
-        public virtual Bet betAmount { get; set; }
+        public Question question { get; set; }
+        public Bet betAmount { get; set; }
     }
 
     public class UserCategories
@@ -93,8 +93,8 @@ namespace Quiz.Models
         public int CategoryId { get; set; }
 
         //navigation properties
-        public virtual UserProfile user {get; set;}
-        public virtual Category question { get; set; }
+        public UserProfile user {get; set;}
+        public Category question { get; set; }
     }
 
 }

@@ -37,25 +37,6 @@ namespace Quiz.Controllers
             MembershipUser user = Membership.GetUser(User.Identity.Name);
             var guid = user.ProviderUserKey;
 
-            //var catQuery = from c in db.UserCategories
-            //               where c.UserId == (int)guid
-            //               select c;
-            //if (catQuery.ToList() == null)
-            //{
-            //    return (from q in MapProducts()
-            //            select q).FirstOrDefault();
-            //}
-            //else
-            //{
-            //    var query = from c in db.Categories
-            //                where !(catQuery).Any(cat => cat.CategoryId == c.CategoryId)
-            //                select c;
-            //    var question = from q in db.UserQuestions
-            //                   where (query).Any(cat => cat == q.Category) && 
-            //}
-
-           
-
             var get_all_questions_answered_query = from q in db.UserQuestions
                                           where q.UserId == (int)guid
                                           select q;
