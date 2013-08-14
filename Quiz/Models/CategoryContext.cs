@@ -41,11 +41,6 @@ namespace Quiz.Models
 
         }
 
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
-        }*/
-
         //Server administration properties
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Question> Questions { get; set; }
@@ -56,5 +51,12 @@ namespace Quiz.Models
         public DbSet<UserQuestions> UserQuestions { get; set; }
         //public DbSet<Bet> Bets { get; set; }
         //public DbSet<BetChip> BetChips { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
+
+        }
+
     }
 }
