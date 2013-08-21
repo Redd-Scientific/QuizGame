@@ -1,0 +1,22 @@
+﻿@model Quiz.Models.QuestionDTO
+
+@{
+    ViewBag.Title = "Here's the question!";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@Html.DisplayFor(model => model.QuestionText)</h3>
+<p>Select answer</p>
+
+@Html.HiddenFor(model => model.QuestionId)
+<input type="button" id="1" value=@(Model.AnswerA) onclick="answer(1)"/>
+<input type="button" id="2" value=@(Model.AnswerB) onclick="answer(2)"/>
+<input type="button" id="3" value=@(Model.AnswerC) onclick="answer(3)"/>
+<input type="button" id="4" value=@(Model.AnswerD) onclick="answer(4)"/>
+
+@section scripts
+{
+<script type="text/javascript" src="~/Scripts/QuizApp/gameClientLogic.js">
+</script>
+}

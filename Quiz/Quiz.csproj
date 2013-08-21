@@ -334,6 +334,10 @@
     <Content Include="Views\Question\Delete.cshtml" />
     <Content Include="Views\Game\StartGame.cshtml" />
     <Content Include="Views\Game\DisplayCategory.cshtml" />
+    <Content Include="Views\Game\ShowQuestion.cshtml" />
+    <Content Include="Views\Game\AnswerCorrect.cshtml" />
+    <Content Include="Views\Game\AnswerWrong.cshtml" />
+    <Content Include="Views\Game\GameOver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

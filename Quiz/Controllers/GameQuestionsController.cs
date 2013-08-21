@@ -16,15 +16,19 @@ namespace Quiz.Controllers
         QuizContext db = new QuizContext();
         private IQueryable<QuestionDTO> MapProducts()
         {
-            return from q in db.Questions
-                   select new QuestionDTO() { QuestionId = q.QuestionId, QuestionText = q.QuestionText,
-                                              AnswerA = q.AnswerA,
-                                              AnswerB= q.AnswerB,
-                                              AnswerC = q.AnswerC,
-                                              AnswerD = q.AnswerD,
-                                              CategoryId = q.Category.CategoryId,
-                                              Category = q.Category
-                   };
+            var quest = from q in db.Questions
+                        select new QuestionDTO()
+                        {
+                            QuestionId = q.QuestionId,
+                            QuestionText = q.QuestionText,
+                            AnswerA = q.AnswerA,
+                            AnswerB = q.AnswerB,
+                            AnswerC = q.AnswerC,
+                            AnswerD = q.AnswerD,
+                            CategoryId = q.Category.CategoryId,
+                            Category = q.Category
+                        };
+            return quest;
         }
 
         /*public IEnumerable<QuestionDTO> GetQuestion()

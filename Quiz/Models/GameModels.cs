@@ -22,6 +22,18 @@ namespace Quiz.Models
         public Category Category;
     }
 
+    public class QuestionBetDTO
+    {
+        public int QuestionID;
+        public int Bet;
+    }
+
+    public class QuestionAnswerDTO
+    {
+        public int QuestionID;
+        public int Answer;
+    }
+
 
     public class UserQuestions
     {
@@ -33,7 +45,7 @@ namespace Quiz.Models
         [Key, Column(Order = 1)]
         [ForeignKey("question")]
         public int QuestionId { get; set; }
-        [Range (1,4)]
+        [Range (0,4)]
         public int answered { get; set; }
         public bool correct { get; set; }
         public int betAmount { get; set; }
@@ -56,7 +68,7 @@ namespace Quiz.Models
 
         //navigation properties
         public UserProfile user {get; set;}
-        public Category question { get; set; }
+        public Category category { get; set; }
     }
 
 }
