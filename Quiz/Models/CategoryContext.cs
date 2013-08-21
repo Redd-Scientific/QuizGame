@@ -55,7 +55,8 @@ namespace Quiz.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             new LogEvent("model creating").Raise();
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<QuizContext>());
         }
 
     }
