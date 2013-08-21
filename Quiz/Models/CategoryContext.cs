@@ -22,7 +22,7 @@ namespace Quiz.Models
         {
         }
 
-        public DbSet<Category> Categories { get; set; }
+        //public DbSet<Category> Categories { get; set; }
     }
 
     public class QuizContext : DbContext
