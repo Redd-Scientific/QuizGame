@@ -1,4 +1,5 @@
-﻿using Quiz.Models;
+﻿using Quiz.Logging;
+using Quiz.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -144,13 +145,16 @@ namespace Quiz.Controllers
                 db.SaveChanges();
                 res = new HttpResponseMessage();
                 res.StatusCode = HttpStatusCode.Accepted;
+                new LogEvent("Working | SubmitBet").Raise();
             }
             else
             {
                 res = new HttpResponseMessage();
                 res.StatusCode = HttpStatusCode.ExpectationFailed;
+                new LogEvent("Failure | SubmitBet").Raise();
             }
             //return RedirectToAction("ShowQuestion", "Game");
+            new LogEvent("coming to an end | SubmitBet").Raise();
             return Json(new { redirectToUrl = Url.Action("ShowQuestion", "Game") });
         }
 
