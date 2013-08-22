@@ -1,4 +1,5 @@
-﻿using Quiz.Migrations;
+﻿using Quiz.Logging;
+using Quiz.Migrations;
 using System.Data.Entity;
 namespace Quiz.Models
 {
