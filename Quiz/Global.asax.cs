@@ -33,6 +33,10 @@ namespace Quiz
 
             //TODO: verify how to specify context for migration
             WebSecurity.InitializeDatabaseConnection("CategoryContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+
+            QuizContext context = new QuizContext();
+            context.SaveChanges();
+
         }
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
