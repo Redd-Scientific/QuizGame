@@ -8,6 +8,7 @@ namespace Quiz.Migrations
     {
         public override void Up()
         {
+            new LogEvent("in up").Raise();
             QuizContext context = new QuizContext();
             context.SaveChanges();
             //context.Database.Initialize();
