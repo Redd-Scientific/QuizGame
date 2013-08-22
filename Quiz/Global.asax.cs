@@ -28,8 +28,8 @@ namespace Quiz
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            System.Data.Entity.Database.SetInitializer(
-                new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
+            //System.Data.Entity.Database.SetInitializer(
+            //    new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
 
             //TODO: verify how to specify context for migration
             WebSecurity.InitializeDatabaseConnection("CategoryContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);

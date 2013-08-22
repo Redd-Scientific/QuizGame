@@ -19,6 +19,8 @@ namespace Quiz.Migrations
 
         protected override void Seed(Quiz.Models.QuizContext context)
         {
+            //System.Data.Entity.Database.SetInitializer(
+            //    new MigrateDatabaseToLatestVersion<QuizContext, QuizConfiguration>());
             context.SaveChanges();
         }
     }
