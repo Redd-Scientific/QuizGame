@@ -12,13 +12,13 @@ namespace Quiz.Migrations
     {
         public QuizConfiguration()
         {
+            new LogEvent("start quiz configuration").Raise();
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Quiz.Models.QuizContext context)
         {
-            new LogEvent("message to myself").Raise();
             context.SaveChanges();
         }
     }
