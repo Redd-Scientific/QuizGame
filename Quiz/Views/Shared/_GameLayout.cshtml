@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - The Game</title>
+        <link href="~/Content/game.css" rel="stylesheet" type="text/css" />
+        <script>
+</script>
+    </head>
+    <body class="main-content">
+                    
+       @RenderBody()     
+
+        <footer>
+            
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
+

@@ -3,8 +3,22 @@
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 
-<h3>The answer is Right</h3>
-
-<div class="buttons">
-			@Html.ActionLink("Next Question", "DisplayCategory", "Game")
+<div class="top_half">
+    <div class="callout">
+                <div class="heading">
+			        <h2>
+				        Result
+			        </h2>
+		        </div>
+		        <div class="main_text">
+			        <h2 class="question_category">Correct Answer</h2>
+		        </div>
+         </div>
+</div>
+<div class="bottom_half">
+    <div class="buttons">
+			<button class="button_style">
+                @Html.ActionLink("Next Question", "DisplayCategory", "Game")
+			</button>
+		</div>
 </div>

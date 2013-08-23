@@ -1,0 +1,153 @@
+﻿
+  body {
+        background: url("../Images/GameImages/Casino Table.png") no-repeat;
+        background-size:cover;
+        overflow:hidden;
+    }
+
+footer {
+        background: url("../Images/GameImages/Casino Table Border.png") no-repeat;
+        background-size:100%;
+        position:absolute;
+           bottom:0;
+           left:0;
+           width:100%;
+           height:250px;   /* Height of the footer */
+           z-index:-1000;
+}
+
+.callout {
+    background: url("../Images/GameImages/Call-out Box.png") no-repeat;
+	width: 55%;
+	height: 300px;
+    position:fixed;
+    margin-left:315px;
+    margin-right:315px;
+    margin-top:40px;
+   font-family: Georgia, serif; 
+}
+
+.heading {
+    position:relative;
+    margin-left:300px;
+}
+
+.top_half {
+    overflow: hidden;
+    width:100%;
+    height:300px;
+}
+
+.bottom_half {
+    float: left;
+    width:100%;
+    height:375px;
+}
+
+.main_text {
+    color:white;
+    word-wrap: break-word;
+    margin-top:30px;
+    margin-top: 30px;
+    width: 500px;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+}
+
+.buttons {
+    /*border:2px solid red;
+	border-radius:25px;*/
+	width: 50px;
+	height: 30px;
+    float:left;
+    padding:25px 50px 10px 100px;
+    margin-left:515px;
+	/*box-shadow: 10px 10px 5px #111010;*/
+}
+
+.button_style {
+    width:100px;
+    height:50px;
+}
+
+.question_category {
+    font-family: Georgia, serif;
+    font-size:35px;
+    margin-left:200px;
+}
+
+.instruction {
+    font-size:30px;
+    font-family:'Adobe Gothic Std';
+    margin-left:550px;
+    margin-top:450px;
+}
+
+/*Place bet*/
+.chipsDiv
+{
+	width: 100%;
+	/*height: 10px;*/
+	margin-left:20px;
+	margin-top:10px;
+	position: relative;
+	float:left;
+}
+
+.chip
+{
+	margin-left:0px;
+}
+
+
+
+.stretch {
+    margin: auto;
+    height:100%;
+	width:100%;
+}
+.chipstretch{
+margin: auto;
+height:100%;
+width:40%;
+}
+
+.chips
+{
+	/*border:2px solid red;*/
+	border-radius:25px;
+	width: 20%;
+	height: 100px;
+	margin-left:20px;
+	margin-top:0px;
+	float:left;
+	/*box-shadow: 10px 10px 5px #888888;*/
+}
+
+
+/*Question and answer*/
+.answer
+{
+    background: url("../Images/GameImages/Card Front.png") no-repeat;
+	width: 20%;
+	height: 100%;
+	margin-left:20px;
+	margin-top:0px;
+	float:left;
+}
+
+.ans
+{
+	position:relative;
+    padding-right:25%;
+    padding-top:35%;
+    padding-left:15%;
+	text-align:center;
+    font-family: 'Segoe UI';
+    font-size:30px;
+}
+
+
+.first
+{
+	margin-left:150px;
+}

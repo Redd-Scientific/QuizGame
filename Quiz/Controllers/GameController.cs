@@ -129,26 +129,30 @@ namespace Quiz.Controllers
                     }
                     new LogEvent("Created uq | SubmitBet " + uq.QuestionId).Raise();
                 }
+                if (uq.question == null)
+                {
+                    uq.question = db.Questions.Find(uq.QuestionId);
+                }
                 
                 //check if the User and Category combo is already in the table
-                UserCategories uc = (from u in db.UserCategories
-                                     where u.UserId == uid && u.CategoryId == uq.question.Category.CategoryId
-                                     select u).FirstOrDefault();
-
-                //if not, add the user and category combo into the table
-                if (uc == null)
-                {
-                    uc = new UserCategories { UserId = uid, totalQuestionsAnswered = 0 };
-                    uc.category = uq.question.Category;
-                    uc.CategoryId = uq.question.CategoryId;
-                    uc.user = up;
-                    uc.totalQuestionsAnswered = 0;
-                    db.UserCategories.Add(uc);
-                }
-
-                //increment the answered questions in the in the user category combo
-                uc.totalQuestionsAnswered += 1;
-
+                 var query = from u in db.UserCategories
+                          where u.UserId == uid && u.CategoryId == uq.question.CategoryId
+                          select u;
+                 UserCategories uc = query.FirstOrDefault();
+                 //if not, add the user and category combo into the table
+                 if (uc == null)
+                 {
+                     uc = new UserCategories { UserId = uid, totalQuestionsAnswered = 0 };
+                     uc.category = uq.question.Category;
+                     uc.CategoryId = uq.question.CategoryId;
+                     uc.user = up;
+                     uc.totalQuestionsAnswered = 0;
+                     db.UserCategories.Add(uc);
+                    // db.SaveChanges();
+                 }
+                
+                 //increment the answered questions in the in the user category combo
+                 uc.totalQuestionsAnswered += 1;
                 db.SaveChanges();
                 res = new HttpResponseMessage();
                 res.StatusCode = HttpStatusCode.Accepted;

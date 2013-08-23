@@ -206,6 +206,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\game.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\GameImages\Call-out Box.png" />
+    <Content Include="Images\GameImages\Card Back.png" />
+    <Content Include="Images\GameImages\Card Front.png" />
+    <Content Include="Images\GameImages\Casino Table Border.png" />
+    <Content Include="Images\GameImages\Casino Table.png" />
+    <Content Include="Images\GameImages\Chip-100.png" />
+    <Content Include="Images\GameImages\Chip-125.png" />
+    <Content Include="Images\GameImages\Chip-25.png" />
+    <Content Include="Images\GameImages\Chip-50.png" />
+    <Content Include="Images\GameImages\Chip-75.png" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\QuizApp\gameClientLogic.js" />

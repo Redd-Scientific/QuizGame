@@ -2,22 +2,32 @@
     ViewBag.Title = "GameOver";
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
-           <div id="question">
-			<h2>
-				Welcome!
-			</h2>
+<div class="top_half">
+    <div class="callout">
+                <div class="heading">
+			        <h2>
+				        Welcome!
+			        </h2>
+		        </div>
+		        <div class="main_text">
+			        <ul>
+				        <li>You start with $100 worth of chips</li>
+				        <li>Based on your confidence in the subject, place your bet</li>
+				        <li>All bets are double or nothing</li>
+				        <li>If you answer the question in the category correctly, you will receive twice your bet. Otherwise you will receive nothing.</li>
+			        </ul>
+		        </div>
+         </div>
+</div>
+<div class="bottom_half">
+    <div class="buttons">
+			<button class="button_style">
+                @Html.ActionLink("Start Game", "DisplayCategory", "Game")
+			</button>
 		</div>
-		<div class="instructions">
-			<ul>
-				<li>You start with $100 worth of chips</li>
-				<li>Based on your confidence in the subject, place your bet</li>
-				<li>All bets are double or nothing</li>
-				<li>If you answer the question in the category correctly, you will receive twice your bet. Otherwise you will receive nothing.</li>
-			</ul>
-		</div>
-		<div class="buttons">
-			@Html.ActionLink("Start Game", "DisplayCategory", "Game")
-		</div>
+</div>
+        
+		
         <!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
         <!--<script src="js/plugins.js"></script>-->
         <!--<script src="js/main.js"></script>-->

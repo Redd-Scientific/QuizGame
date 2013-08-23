@@ -5,17 +5,26 @@
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="top_half">
+    <div class="callout">
+        <div class="heading">
+            <h2>Question</h2>
+        </div>
+        <div class="main_text">
+            <h3 class="question_category">@Html.DisplayFor(model => model.QuestionText)</h3>
+        </div>
+   </div>
+</div>
 
-<h3>@Html.DisplayFor(model => model.QuestionText)</h3>
-<p>Select answer</p>
+<div class="bottom_half">
 
-@Html.HiddenFor(model => model.QuestionId)
-<input type="button" id="1" value=@(Model.AnswerA) onclick="answer(1)"/>
-<input type="button" id="2" value=@(Model.AnswerB) onclick="answer(2)"/>
-<input type="button" id="3" value=@(Model.AnswerC) onclick="answer(3)"/>
-<input type="button" id="4" value=@(Model.AnswerD) onclick="answer(4)"/>
-
+    @Html.HiddenFor(model => model.QuestionId)
+    <div id="answer1" class="answer first" onclick="answer(1)"><h4 class="ans">@(Model.AnswerA) </h4></div>
+	<div id="answer2" class="answer" onclick="answer(2)"><h4 class="ans">@(Model.AnswerB) </h4></div>
+	<div id="answer3" class="answer" onclick="answer(3)"><h4 class="ans">@(Model.AnswerC) </h4></div>
+	<div id="answer4" class="answer" onclick="answer(4)"><h4 class="ans">@(Model.AnswerD) </h4></div>
+ 
+</div>
 @section scripts
 {
 <script type="text/javascript" src="~/Scripts/QuizApp/gameClientLogic.js">

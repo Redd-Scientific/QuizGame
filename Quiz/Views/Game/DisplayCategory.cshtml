@@ -5,17 +5,37 @@
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="top_half">
+    <div class="callout">
+        <div class="heading">
+            <h2>Category</h2>
+        </div>
+        <div class="main_text">
+            <h3 class="question_category">@Html.DisplayFor(model => model.Category.Name)</h3>
+        </div>
+   </div>
+</div>
+    <div class="bottom_half">
 
-<h3>@Html.DisplayFor(model => model.Category.Name)</h3>
-<p>Place Bet:</p>
 
-@Html.HiddenFor(model => model.QuestionId)
-<input type="button" id="10" value="10" onclick="addBet(10)"/>
-<input type="button" id="25" value="25" onclick="addBet(25)"/>
-<input type="button" id="50" value="50" onclick="addBet(50)"/>
-<input type="button" id="100" value="100" onclick="addBet(100)"/>
+        @Html.HiddenFor(model => model.QuestionId)
+       <!-- <input type="button" id="10" value="10" onclick="addBet(10)"/>
+        <input type="button" id="25" value="25" onclick="addBet(25)"/>
+        <input type="button" id="50" value="50" onclick="addBet(50)"/>
+        <input type="button" id="100" value="100" onclick="addBet(100)"/>-->
 
+        <div id="chipsDivID" class="chipsDiv">
+			<div id="chip1" class="first chips centered" >
+			<img src="../Images/GameImages/Chip-25.png" class="chipstretch Chip1" onclick="addBet(25)" alt="" /></div>
+			<div id="chip2" class="chips centered" >
+			<img src="../Images/GameImages/Chip-50.png" class="chipstretch Chip2" onclick="addBet(50)" alt="" /></div>
+			<div id="chip3" class="chips centered" >
+			<img src="../Images/GameImages/Chip-75.png" class="chipstretch Chip3" onclick="addBet(75)" alt="" /></div>
+			<div id="chip4" class="chips centered" >
+			<img src="../Images/GameImages/Chip-100.png" class="chipstretch Chip4" onclick="addBet(100)" alt="" /></div>
+		</div>
+
+    </div>
 @section scripts
 {
 <script type="text/javascript" src="~/Scripts/QuizApp/gameClientLogic.js">
