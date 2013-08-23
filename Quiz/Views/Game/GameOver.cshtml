@@ -1,8 +1,23 @@
 ﻿@{
-    ViewBag.Title = "GameOver";
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 
-<h2>GameOver</h2>
-
-@Html.ActionLink("Start Again", "RestartGame");
+<div class="top_half">
+    <div class="callout">
+                <div class="heading">
+			        <h2>
+				        Result
+			        </h2>
+		        </div>
+		        <div class="main_text">
+			        <h2 class="question_category">Game Over</h2>
+		        </div>
+         </div>
+</div>
+<div class="bottom_half">
+    <div class="buttons">
+			<button class="button_style">
+                @Html.ActionLink("Start Again", "RestartGame")
+			</button>
+		</div>
+</div>
