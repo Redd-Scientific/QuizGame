@@ -71,4 +71,13 @@ namespace Quiz.Models
         public Category category { get; set; }
     }
 
+    public class UserBet
+    {
+        [Key, Column(Order = 0)]
+        public int UserId { get; set; }
+        public int BetAmt { get; set; }
+        //navigation properties
+        public UserProfile user { get; set; }
+    }
+
 }

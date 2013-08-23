@@ -23,7 +23,7 @@ namespace Quiz.Controllers
         {
             MembershipUser user = Membership.GetUser(User.Identity.Name);
             currentUser = (int)user.ProviderUserKey;
-            Session["currentUser"] = currentUser;   
+            Session["currentUser"] = currentUser;
             return View();
         }
 
