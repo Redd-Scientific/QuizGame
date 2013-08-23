@@ -98,24 +98,21 @@ namespace Quiz.Controllers
             int uid = (int)Session["currentUser"];
             new LogEvent("questionId | SubmitBet " + questionId).Raise();
             new LogEvent("betAmt | SubmitBet " + betAmt).Raise();
+            new LogEvent("uid | SubmitBet " + uid).Raise();
             if (questionId != null && betAmt != null && uid != null)
             {
+                new LogEvent("In If | SubmitBet ").Raise();
                 UserProfile up = db.UserProfiles.Find(uid);
-
+                new LogEvent("up | SubmitBet " + up.UserName).Raise();
                 //Check if the question is already in UserQuestion table
                 UserQuestions uq = (from u in db.UserQuestions
                                     where u.UserId == uid && u.QuestionId == questionId
                                     select u).FirstOrDefault();
-
-                if (uq.question == null)
-                {
-                    uq.question = db.Questions.Find(uq.QuestionId);
-                }
-
+                new LogEvent("uq | SubmitBet " + uq).Raise();
                 //If not, create the question
                 if (uq == null)
                 {
-
+                    new LogEvent("Creating uq | SubmitBet ").Raise();
                     uq = new UserQuestions { UserId = uid, QuestionId = questionId, betAmount = betAmt };
                     uq.answered = 0;
                     uq.correct = false;
@@ -123,6 +120,11 @@ namespace Quiz.Controllers
                     uq.question.CategoryId = uq.question.Category.CategoryId;
                     uq.user = up;
                     db.UserQuestions.Add(uq);
+                    if (uq.question == null)
+                    {
+                        uq.question = db.Questions.Find(uq.QuestionId);
+                    }
+                    new LogEvent("Created uq | SubmitBet " + uq.QuestionId).Raise();
                 }
                 
                 //check if the User and Category combo is already in the table
