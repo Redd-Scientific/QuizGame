@@ -205,6 +205,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\game.css" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\QuizApp\gameClientLogic.js" />
@@ -288,7 +289,6 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -336,6 +336,7 @@
     <Content Include="Views\Game\AnswerCorrect.cshtml" />
     <Content Include="Views\Game\AnswerWrong.cshtml" />
     <Content Include="Views\Game\GameOver.cshtml" />
+    <Content Include="Views\Shared\_GameLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

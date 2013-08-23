@@ -162,8 +162,8 @@ namespace Quiz.Controllers
             }
             //return RedirectToAction("ShowQuestion", "Game");
             new LogEvent("coming to an end | SubmitBet").Raise();
-            //return Json(new { redirectToUrl = Url.Action("ShowQuestion", "Game") });
-            return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/ShowQuestion" });
+            return Json(new { redirectToUrl = Url.Action("ShowQuestion", "Game") });
+            //return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/ShowQuestion" });
         }
 
         public ActionResult ShowQuestion()
@@ -205,15 +205,15 @@ namespace Quiz.Controllers
             {
                 uq.correct = true;
                 db.SaveChanges();
-                //return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game") });
-                return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerCorrect" });
+                return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game") });
+                //return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerCorrect" });
             }
             else
             {
                 uq.correct = false;
                 db.SaveChanges();
-                //return Json(new { redirectToUrl = Url.Action("AnswerWrong", "Game") });
-                return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerWrong" });
+                return Json(new { redirectToUrl = Url.Action("AnswerWrong", "Game") });
+                //return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerWrong" });
             }
         }
 
@@ -225,6 +225,22 @@ namespace Quiz.Controllers
         public ActionResult AnswerWrong()
         {
             return View();
+        }
+
+        public ActionResult RestartGame()
+        {
+            List<UserQuestions> uq = db.UserQuestions.ToList();
+            foreach (UserQuestions u in uq)
+            {
+                db.UserQuestions.Remove(u);
+            }
+            List<UserCategories> uc = db.UserCategories.ToList();
+            foreach (UserCategories u in uc)
+            {
+                db.UserCategories.Remove(u);
+            }
+            db.SaveChanges();
+            return RedirectToAction("DisplayCategory"); 
         }
 
     }

@@ -7,6 +7,7 @@ function addBet(amt) {
     $.ajax({
         type: 'POST',
         url: "/Game/SubmitBet",
+        //url: "quiz-6.apphb.com/Game/SubmitBet",
         data: {
             "questionId": parseInt(qid),
             "betAmt": amt
