@@ -94,6 +94,7 @@ namespace Quiz.Controllers
         [HttpPost]
         public JsonResult SubmitBet(int questionId, int betAmt)
         {
+            new LogEvent("At | SubmitBet").Raise();
             HttpResponseMessage res;
             int uid = (int)Session["currentUser"];
             if (questionId != null && betAmt != null && uid != null)
