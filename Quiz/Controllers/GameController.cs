@@ -155,7 +155,8 @@ namespace Quiz.Controllers
             }
             //return RedirectToAction("ShowQuestion", "Game");
             new LogEvent("coming to an end | SubmitBet").Raise();
-            return Json(new { redirectToUrl = Url.Action("ShowQuestion", "Game") });
+            //return Json(new { redirectToUrl = Url.Action("ShowQuestion", "Game") });
+            return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/ShowQuestion" });
         }
 
         public ActionResult ShowQuestion()
@@ -197,13 +198,15 @@ namespace Quiz.Controllers
             {
                 uq.correct = true;
                 db.SaveChanges();
-                return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game") });
+                //return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game") });
+                return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerCorrect" });
             }
             else
             {
                 uq.correct = false;
                 db.SaveChanges();
-                return Json(new { redirectToUrl = Url.Action("AnswerWrong", "Game") });
+                //return Json(new { redirectToUrl = Url.Action("AnswerWrong", "Game") });
+                return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerWrong" });
             }
         }
 
