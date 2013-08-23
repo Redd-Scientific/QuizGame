@@ -26,9 +26,9 @@ namespace Quiz.Models
         public int UserId { get; set; }
         public string UserName { get; set; }
 
-        public virtual ICollection<UserQuestions> Questions { get; set; }
-        public virtual ICollection<UserCategories> Categories { get; set; }
-        public virtual int BetPoints { get; set; }
+        //public virtual ICollection<UserQuestions> Questions { get; set; }
+        //public virtual ICollection<UserCategories> Categories { get; set; }
+       // public virtual int BetPoints { get; set; }
     }
 
     public class RegisterExternalLoginModel
