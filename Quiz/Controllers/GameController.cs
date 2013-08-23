@@ -96,7 +96,7 @@ namespace Quiz.Controllers
         {
             HttpResponseMessage res;
             int uid = (int)Session["currentUser"];
-            new LogEvent("Current User | SubmitBet" + uid).Raise();
+ 
             if (questionId != null && betAmt != null && uid != null)
             {
                 UserProfile up = db.UserProfiles.Find(uid);
@@ -105,6 +105,7 @@ namespace Quiz.Controllers
                 UserQuestions uq = (from u in db.UserQuestions
                                     where u.UserId == uid && u.QuestionId == questionId
                                     select u).FirstOrDefault();
+                new LogEvent("UserQuestion | SubmitBet " + uq.QuestionId).Raise();
 
                 if (uq.question == null)
                 {
