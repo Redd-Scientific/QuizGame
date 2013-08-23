@@ -102,7 +102,10 @@ namespace Quiz.Controllers
             if (questionId != null && betAmt != null && uid != null)
             {
                 new LogEvent("In If | SubmitBet ").Raise();
-                UserProfile up = db.UserProfiles.Find(uid);
+                UserProfile up = (from u in db.UserProfiles
+                                  where u.UserId == uid
+                                  select u).FirstOrDefault();
+                //UserProfile up = db.UserProfiles.Find(uid);
                 new LogEvent("up | SubmitBet " + up.UserName).Raise();
                 //Check if the question is already in UserQuestion table
                 UserQuestions uq = (from u in db.UserQuestions
