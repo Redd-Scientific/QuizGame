@@ -94,9 +94,9 @@ namespace Quiz.Controllers
         [HttpPost]
         public JsonResult SubmitBet(int questionId, int betAmt)
         {
-            new LogEvent("At | SubmitBet").Raise();
             HttpResponseMessage res;
             int uid = (int)Session["currentUser"];
+            new LogEvent("Current User | SubmitBet" + uid).Raise();
             if (questionId != null && betAmt != null && uid != null)
             {
                 UserProfile up = db.UserProfiles.Find(uid);
