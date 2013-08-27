@@ -205,8 +205,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\game.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\game.css" />
     <Content Include="Images\GameImages\Call-out Box.png" />
     <Content Include="Images\GameImages\Card Back.png" />
     <Content Include="Images\GameImages\Card Front.png" />

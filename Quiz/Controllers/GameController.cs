@@ -11,6 +11,7 @@ using System.Web.Security;
 
 namespace Quiz.Controllers
 {
+    [Authorize]
     public class GameController : Controller
     {
         //
@@ -24,6 +25,17 @@ namespace Quiz.Controllers
             MembershipUser user = Membership.GetUser(User.Identity.Name);
             currentUser = (int)user.ProviderUserKey;
             Session["currentUser"] = currentUser;
+            UserBet betamt = new UserBet { UserId = currentUser, BetAmt = 100 };
+            betamt.user = db.UserProfiles.Find(currentUser);
+            UserBet existing = db.UserBet.Find(currentUser);
+            if (existing == null)
+            {
+                db.UserBet.Add(betamt);
+            }
+            else
+            {
+                existing.BetAmt = 100;
+            }
             return View();
         }
 
