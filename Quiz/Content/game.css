@@ -86,7 +86,7 @@ footer {
     font-family: Georgia, serif;
     color:#ffd800;
     font-size:15px;
-    margin-left:175px;
+    /*margin-left: 175px;*/
 }
 
 .instruction {
@@ -169,4 +169,8 @@ width:40%;
 .footerText {
     margin-top:50px;
     margin-left:43%;
+}
+
+li {
+text-align: left;
 }
