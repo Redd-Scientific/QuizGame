@@ -36,6 +36,22 @@ namespace Quiz.Controllers
             {
                 existing.BetAmt = 100;
             }
+
+            //RESET GAME
+
+            List<UserQuestions> uq = db.UserQuestions.ToList();
+            foreach (UserQuestions u in uq)
+            {
+                db.UserQuestions.Remove(u);
+            }
+            List<UserCategories> uc = db.UserCategories.ToList();
+            foreach (UserCategories u in uc)
+            {
+                db.UserCategories.Remove(u);
+            }
+            db.SaveChanges();
+
+
             return View();
         }
 
