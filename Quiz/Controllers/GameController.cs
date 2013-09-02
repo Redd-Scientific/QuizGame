@@ -140,7 +140,7 @@ namespace Quiz.Controllers
                                     where u.UserId == uid && u.QuestionId == questionId
                                     select u).FirstOrDefault();
                 new LogEvent("uq | SubmitBet " + uq).Raise();
-                //If not, create the question
+                //If not, create the UserQuestion
                 if (uq == null)
                 {
                     new LogEvent("Creating uq | SubmitBet ").Raise();
@@ -181,6 +181,11 @@ namespace Quiz.Controllers
                 
                  //increment the answered questions in the in the user category combo
                  uc.totalQuestionsAnswered += 1;
+
+                //get the UserBet and subtract the betAmt for the user
+                 UserBet ub = db.UserBet.Find(uid);
+                 ub.BetAmt -= betAmt;
+
                 db.SaveChanges();
                 res = new HttpResponseMessage();
                 res.StatusCode = HttpStatusCode.Accepted;
@@ -232,12 +237,11 @@ namespace Quiz.Controllers
                                 select u).FirstOrDefault();
 
             uq.answered += 1;
-
             if (correctAnswer == answer)
             {
                 uq.correct = true;
                 db.SaveChanges();
-                return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game") });
+                return Json(new { redirectToUrl = Url.Action("AnswerCorrect", "Game" ) });
                 //return Json(new { redirectToUrl = "http://quiz-6.apphb.com/Game/AnswerCorrect" });
             }
             else
@@ -251,11 +255,21 @@ namespace Quiz.Controllers
 
         public ActionResult AnswerCorrect()
         {
+            int uid = (int)Session["currentUser"];
+            UserBet ub = db.UserBet.Find(uid);
+            int cq = (int)Session["currentQuestion"];
+            UserQuestions uq = (from q in db.UserQuestions
+                               where q.QuestionId == cq && q.UserId == uid
+                               select q).FirstOrDefault();
+            ub.BetAmt += 2 * uq.betAmount;
+            db.SaveChanges();
             return View();
         }
 
         public ActionResult AnswerWrong()
         {
+            int uid = (int)Session["currentUser"];
+            UserBet ub = db.UserBet.Find(uid);
             return View();
         }
 

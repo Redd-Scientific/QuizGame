@@ -4,6 +4,7 @@
 }
 
 <div class="top_half">
+    @Html.Partial("betSystem");
     <div class="callout">
                 <div class="heading">
 			        <h2>
@@ -21,7 +22,6 @@
                 @Html.ActionLink("Next Question", "DisplayCategory", "Game")
 			</button>
 		</div>
-    @Html.Partial("betSystem");
 </div>
  @section scripts
         {

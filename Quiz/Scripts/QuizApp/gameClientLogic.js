@@ -84,4 +84,4 @@ function BetViewModel() {
     ko.applyBindings(BetViewModel, document.getElementById('footerSection'));
 });*/
 
-ko.applyBindings(new BetViewModel(), document.getElementById('footerSection'));
+ko.applyBindings(new BetViewModel(), document.getElementById('betSection'));

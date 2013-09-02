@@ -6,6 +6,7 @@
 }
 
 <div class="top_half">
+    @Html.Partial("betSystem");
     <div class="callout">
         <div class="heading">
             <h2>Question</h2>
@@ -23,8 +24,7 @@
 	<div id="answer2" class="answer" onclick="answer(2)"><h4 class="ans">@(Model.AnswerB) </h4></div>
 	<div id="answer3" class="answer" onclick="answer(3)"><h4 class="ans">@(Model.AnswerC) </h4></div>
 	<div id="answer4" class="answer" onclick="answer(4)"><h4 class="ans">@(Model.AnswerD) </h4></div>
- @Html.Partial("betSystem");
-</div>
+ </div>
 @section scripts
 {
 <script type="text/javascript" src="~/Scripts/QuizApp/gameClientLogic.js">
