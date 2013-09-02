@@ -348,6 +348,7 @@
     <Content Include="Views\Game\AnswerWrong.cshtml" />
     <Content Include="Views\Game\GameOver.cshtml" />
     <Content Include="Views\Shared\_GameLayout.cshtml" />
+    <Content Include="Views\Game\betSystem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

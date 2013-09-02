@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "GameOver";
+    ViewBag.Title = "Welcome";
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 <div class="top_half">
@@ -25,6 +25,7 @@
                 @Html.ActionLink("Start Game", "DisplayCategory", "Game")
 			</button>
 		</div>
+   @Html.Partial("betSystem");
 </div>
 
         <!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->

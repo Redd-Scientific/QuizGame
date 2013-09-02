@@ -275,5 +275,18 @@ namespace Quiz.Controllers
             return RedirectToAction("DisplayCategory"); 
         }
 
+        public ActionResult betSystem()
+        {
+            return View();
+        }
+
+        public JsonResult getBet()
+        {
+            int uid = (int)Session["currentUser"];
+            UserBet ub = db.UserBet.Find(uid);
+            var result = Json(new { BetAmt = ub.BetAmt }, JsonRequestBehavior.AllowGet);
+            return result;
+        }
+
     }
 }

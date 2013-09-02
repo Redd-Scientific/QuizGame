@@ -52,13 +52,36 @@ function answer(ans) {
 Knockout JS for Bet
 */
 
-var BetViewModel =
+function Bet(data)
 {
-    BetAmt: 100
-};
+    this.BetAmt = ko.observable(data.BetAmt);
+}
 
-BetViewModel.getBetAmt = ko.computed(function () {
-    return this.BetAmt + "";
-});
+function BetViewModel() {
+    var self = this;
+    // self.BetAmt = new Bet({BetAmt:100});
+    self.BetAmt = ko.observable(50);
+    $.getJSON("/Game/getBet").done( function (data) {
+        console.log(data);
+        // self.BetAmt = new Bet(data);
+        self.BetAmt(data.BetAmt);
+    });
 
-ko.applyBindings(BetViewModel, document.getElementById('footerSection'));
+    /*$.ajax({
+        type: 'GET',
+        url: "/Game/getBet",
+        success: function (result) {
+            console.log(result);
+            self.BetAmt = new Bet(result);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console && console.log("request failed");
+        }
+    });*/
+}
+
+/*$.ready(function () {
+    ko.applyBindings(BetViewModel, document.getElementById('footerSection'));
+});*/
+
+ko.applyBindings(new BetViewModel(), document.getElementById('footerSection'));
