@@ -47,3 +47,18 @@ function answer(ans) {
         }
     });
 }
+
+/**
+Knockout JS for Bet
+*/
+
+var BetViewModel =
+{
+    BetAmt: 100
+};
+
+BetViewModel.getBetAmt = ko.computed(function () {
+    return this.BetAmt + "";
+});
+
+ko.applyBindings(BetViewModel, document.getElementById('footerSection'));

@@ -7,12 +7,17 @@
         <script>
 </script>
     </head>
-    <body class="main-content">
-                    
+    <body>
+    <div class="main-content">                
        @RenderBody()     
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/Scripts/knockout-2.3.0.js")
         @RenderSection("scripts", required: false)
+    </div>
+    <footer id="footerSection">
+        <h3 class="footerText">Amount left: $<span id="betamt" data-bind="text: getBetAmt"></span></h3>
+    </footer>
     </body>
 </html>
 
