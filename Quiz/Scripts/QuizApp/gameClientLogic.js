@@ -60,7 +60,7 @@ function Bet(data)
 function BetViewModel() {
     var self = this;
     // self.BetAmt = new Bet({BetAmt:100});
-    self.BetAmt = ko.observable(50);
+    self.BetAmt = ko.observable();
     $.getJSON("/Game/getBet").done( function (data) {
         console.log(data);
         // self.BetAmt = new Bet(data);
