@@ -4,6 +4,7 @@
 }
 <div class="top_half">
        @Html.Partial("betSystem");
+    @Html.Partial("timerSystem");
     <div class="callout">
                 <div class="heading">
 			        <h2>
@@ -22,8 +23,8 @@
 </div>
 <div class="bottom_half">
     <div class="buttons">
-			<button class="button_style">
-                @Html.ActionLink("Start Game", "DisplayCategory", "Game")
+			<button class="button_style" value="Start Game" onclick="startGame()">
+               <!-- @Html.ActionLink("Start Game", "DisplayCategory", "Game") -->
 			</button>
 		</div>
 </div>
@@ -32,10 +33,6 @@
         <!--<script src="js/plugins.js"></script>-->
         <!--<script src="js/main.js"></script>-->
 
- @section scripts
-        {
-            <script type="text/javascript" src="~/Scripts/QuizApp/gameClientLogic.js">
-            </script>
-        }
+
 
 

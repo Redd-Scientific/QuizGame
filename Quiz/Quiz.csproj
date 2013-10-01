@@ -220,6 +220,9 @@
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\QuizApp\gameClientLogic.js" />
+    <Content Include="Scripts\QuizApp\jquery.countdown.js" />
+    <Content Include="Scripts\QuizApp\knockout.localStorage.js" />
+    <Content Include="Styles\jquery.countdown.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Styles\normalize.css" />
     <Content Include="Styles\placeBet.css" />
