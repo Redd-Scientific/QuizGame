@@ -183,3 +183,13 @@ text-align: left;
     float: left;
     height: 50px;
 }
+
+#timerSection {
+    margin-left: 250px;
+    color: white;
+    text-align: center;
+    width: 300px;
+    float: left;
+    height: 50px;
+    z-index:1000;
+}
