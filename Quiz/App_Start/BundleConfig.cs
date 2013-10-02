@@ -26,7 +26,8 @@ namespace Quiz
             bundles.Add(new ScriptBundle("~/bundles/quizappjs").Include(
                       "~/Scripts/QuizApp/jquery.countdown.js",
                       "~/Scripts/QuizApp/knockout.localStorage.js",
-                      "~/Scripts/QuizApp/gameClientLogic.js"
+                      "~/Scripts/QuizApp/gameClientLogic.js",
+                      "~/Scripts/QuizApp/timer.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));

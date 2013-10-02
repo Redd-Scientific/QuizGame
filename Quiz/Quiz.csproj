@@ -222,6 +222,7 @@
     <Content Include="Scripts\QuizApp\gameClientLogic.js" />
     <Content Include="Scripts\QuizApp\jquery.countdown.js" />
     <Content Include="Scripts\QuizApp\knockout.localStorage.js" />
+    <Content Include="Scripts\QuizApp\timer.js" />
     <Content Include="Styles\jquery.countdown.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Styles\normalize.css" />
