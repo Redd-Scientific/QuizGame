@@ -217,6 +217,10 @@
     <Content Include="Images\GameImages\Chip-25.png" />
     <Content Include="Images\GameImages\Chip-50.png" />
     <Content Include="Images\GameImages\Chip-75.png" />
+    <Content Include="Content\GameImages\Dice.png" />
+    <Content Include="Content\GameImages\Menu.png" />
+    <Content Include="Content\GameImages\Spade-Chip.png" />
+    <Content Include="Content\GameImages\Timer.png" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\QuizApp\gameClientLogic.js" />

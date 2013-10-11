@@ -1,6 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
+<header> 
+    @Html.Partial("betSystem");
+    @Html.Partial("timerSystem");
+</header>
 
 <div class="top_half">
        @Html.Partial("betSystem");
