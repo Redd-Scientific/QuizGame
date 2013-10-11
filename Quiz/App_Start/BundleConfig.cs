@@ -33,7 +33,7 @@ namespace Quiz
             bundles.Add(new ScriptBundle("~/bundles/notimer").Include(
                       "~/Scripts/QuizApp/jquery.countdown.js",
                       "~/Scripts/QuizApp/knockout.localStorage.js",
-                      "~/Scripts/QuizApp/gameClientLogic.js",
+                      "~/Scripts/QuizApp/gameClientLogic.js"
                       ));
 
 

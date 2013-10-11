@@ -3,6 +3,7 @@
 }
 <header> 
     @Html.Partial("betSystem");
+    <div class="roundTitle"><h2>ROUND TITLE</h2></div>
     @Html.Partial("timerSystem");
 </header>
 
@@ -21,7 +22,7 @@
 </div>
 <div class="bottom_half">
     <div class="buttons">
-			<button class="button_style">
+			<button class="button_style" id="restartQuiz" onclick="resetTimer()">
                 @Html.ActionLink("Start Again", "RestartGame")
 			</button>
 		</div>

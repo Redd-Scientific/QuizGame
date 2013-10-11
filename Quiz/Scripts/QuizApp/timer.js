@@ -4,11 +4,12 @@ function Timer(data) {
 }
 
 var timer;
+var maxTime = 30;
 function TimerViewModel() {
     var self = this;
     var start, elapsed;
     // self.BetAmt = new Bet({BetAmt:100});
-    self.TimeLeft = ko.observable(29, { persist: 'timeLeft' });
+    self.TimeLeft = ko.observable(maxTime-1, { persist: 'timeLeft' });
     self.secondsLeft = ko.observable(60, { persist: 'secondsLeft' });
     self.reduceCount = function () {
         var time = new Date().getTime() - start;
@@ -30,9 +31,9 @@ function TimerViewModel() {
             //$("#timerSection").countdown({ until: '+' + localStorage.timer + 'm', onTick: everySecond, tickInterval: 1 });
             //setInterval(self.reduceCount, 1000);      
         }
-        else {
+        else if (timeLeft === 0 && secLeft == 0) {
             clearInterval(timer);
-            localStorage.toStart == "false";
+            localStorage.toStart = "false";
             window.location.href = "/Game/GameOver"
         }
     }
@@ -61,8 +62,14 @@ $(function () {
 
 function startGame() {
     //console.log("Starting timer: " + timerVM.TimeLeft());
-    timerVM.TimeLeft(29, { persist: 'timeLeft' });
+    timerVM.TimeLeft(maxTime - 1, { persist: 'timeLeft' });
     timerVM.secondsLeft(60, { persist: 'secondsLeft' });
     localStorage.toStart = true;
     window.location.href = "/Game/DisplayCategory";
+}
+
+function resetTimer() {
+    timerVM.TimeLeft(maxTime - 1, { persist: 'timeLeft' });
+    timerVM.secondsLeft(60, { persist: 'secondsLeft' });
+    localStorage.toStart = true;
 }
