@@ -8,7 +8,7 @@ function TimerViewModel() {
     var self = this;
     var start, elapsed;
     // self.BetAmt = new Bet({BetAmt:100});
-    self.TimeLeft = ko.observable(1, { persist: 'timeLeft' });
+    self.TimeLeft = ko.observable(29, { persist: 'timeLeft' });
     self.secondsLeft = ko.observable(60, { persist: 'secondsLeft' });
     self.reduceCount = function () {
         var time = new Date().getTime() - start;
@@ -61,7 +61,7 @@ $(function () {
 
 function startGame() {
     //console.log("Starting timer: " + timerVM.TimeLeft());
-    timerVM.TimeLeft(1, { persist: 'timeLeft' });
+    timerVM.TimeLeft(29, { persist: 'timeLeft' });
     timerVM.secondsLeft(60, { persist: 'secondsLeft' });
     localStorage.toStart = true;
     window.location.href = "/Game/DisplayCategory";
