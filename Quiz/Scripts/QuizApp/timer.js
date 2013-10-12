@@ -15,8 +15,8 @@ function TimerViewModel() {
         var time = new Date().getTime() - start;
         elapsed = Math.floor(time / 100) / 10;
 
-        var timeLeft = self.TimeLeft();
-        var secLeft = self.secondsLeft();
+        var timeLeft = parseInt(self.TimeLeft());
+        var secLeft = parseInt(self.secondsLeft());
         if (timeLeft >= 0 && secLeft > 0 && elapsed > 0) {
             secLeft -= Math.round(elapsed);
             start = new Date().getTime();
